@@ -1,0 +1,55 @@
+
+package janv2026;
+
+import java.util.Arrays;
+import java.util.Random;
+
+public class SAe22 {
+
+
+  public static void main(String[] args) {
+
+    int[] données = générerDonnées(100000);
+    //remplirTableauTrie(données);
+    //inverserTableau(données);
+    Arrays.sort(données);
+
+
+  }
+
+
+  public static int[] générerDonnées(int longueur) {
+    Random random = new Random();
+    int[] t = new int[longueur];
+    for (int i = 0 ; i < t.length ; i++)
+      t[i] = random.nextInt(); // tirage aléatoire d'un int quelconque (compris entre -2^31 et 2^31-1)
+    return t;
+  }
+
+  public static void remplirTableauTrie(int[] t) {
+    for (int i = 0; i < t.length; i++)
+      t[i] = i;
+  }
+
+  public static void inverserTableau(int[] t) {
+    int n = t.length;
+    for (int i = 0; i < n / 2; i++) {
+      int temp = t[i];
+      t[i] = t[n - 1 - i];
+      t[n - 1 - i] = temp;
+    }
+  }
+
+
+  /*public static void bulleMethode(int[] tab) {
+    for (int i = 0; i < tab.length - 1; i++) {
+      for (int j = 0; j < tab.length - 1 - i; j++) {
+        if (tab[j] > tab[j + 1]) {
+          int temp = tab[j];
+          tab[j] = tab[j + 1];
+          tab[j + 1] = temp;
+        }
+      }
+    }
+  }*/
+
